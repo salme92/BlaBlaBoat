@@ -15,12 +15,33 @@ router.post("/newUser", (req, res, next) => {
 
 
 //CRUD => READ
+router.get("/showUsers", (req,res,next) => {
+    User.find()
+                .then((showUsers) => res.status(200).json(showUsers))
+                .catch((e) => res.status(500).json(e))
 
-  
-
+})
 //CRUD => UPDATE
 
+router.post('/updateBoat/:id', (req,res) => {
+    const userId = req.params.id;
+    const {name,type,imgBoat} = req.body;
+    const updates = {name,type,imgBoat,userId};
+    console.log(updates)
+  
+    Boats.findByIdAndUpdate(userId, updates)
+        .then(() => res.status(200).json({ message: 'Update' }))
+        .catch(e => res.status(500).json(e))
+  })
+
+
 //CRUD => DELETE
+
+router.get('/deleteUser/:id', function (req, res, next) {
+    User.findByIdAndRemove(req.params.id)
+      .then(() => res.status(200).json({ message: 'removed' }))
+      .catch(e => res.status(500).json(e))
+  });
 
 
 
