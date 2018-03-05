@@ -7,6 +7,16 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGXCwt_ms1pKq5v1llN5jDZ1lE37K2-A0&libraries=places&callback=initAutocomplete"
+  async defer></script>
+  <script src="./assets/js/main_jq.js" type="text/javascript"></script>
+  <script>
+  $(document).ready(function(){
+    $(".toggle-btn").click(function(){
+        $("#myCollapsible").collapse('toggle');
+    });
+});</script>
 </head>
 <body>
   <app-root></app-root>

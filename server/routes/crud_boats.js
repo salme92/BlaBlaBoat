@@ -11,7 +11,6 @@ router.post("/newBoat", (req,res,next) => {
  Boat.save()
             .then((savedBoat) => res.status(200).json(savedBoat))
             .catch((e) => res.status(500).json(e));
- 
 })
 
 
