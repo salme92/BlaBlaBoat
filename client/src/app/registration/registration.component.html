@@ -10,83 +10,12 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <form>
-        <div class="block">
-          <br/>
-          <br/>
-          <h5>Datos personales</h5>
-          <hr/>
-
-          <div id="adedit_signup">
-            <div class="line-entry">
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Nombre</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Apellidos</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-            </div>
-            <div class="line-entry">
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Teléfono</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Correo electrónico</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-            </div>
-            <div class="line-entry">
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Contraseña</label>
-                  <br/>
-                  <input type="password" maxlength="50">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Fecha</label>
-                  <br/>
-                  <input type="date">
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <form action="#" method="POST">
+      <form action="#" method="POST" >
         <div class="block">
           <br/>
           <br/>
           <h5>Datos del viaje</h5>
           <hr/>
-
           <div id="adedit_signup">
             <div class="line-entry">
               <div class="col-sm-6">
@@ -142,33 +71,37 @@
                 </div>
               </div>
             </div>
-            <div class="line-entry">
-                <div class="col-sm-12">
-                  <br/>
-                    <button>Crear viaje</button>
-                </div>
-              </div>
           </div>
         </div>
         <!--DRAG AND DROP -->
       </form>
+      <div>
+        <p>&nbsp;</p>
+      </div>
       <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<div class="file-upload">
-  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-
-  <div class="image-upload-wrap">
-    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-    <div class="drag-text">
-      <h3>Drag and drop a file or select add Image</h3>
-    </div>
-  </div>
-  <div class="file-upload-content">
-    <img class="file-upload-image" src="#" alt="your image" />
-    <div class="image-title-wrap">
-      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-    </div>
-  </div>
-</div>
+      <div class="file-upload">
+        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+        <div class="image-upload-wrap">
+          <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+          <div class="drag-text">
+            <h3>Drag and drop a file or select add Image</h3>
+          </div>
+        </div>
+        <div class="file-upload-content">
+          <img class="file-upload-image" src="#" alt="your image" />
+          <div class="image-title-wrap">
+            <button type="button" onclick="removeUpload()" class="remove-image">Remove
+              <span class="image-title">Uploaded Image</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="line-entry">
+          <div class="col-sm-12">
+            <br/>
+              <button>Crear viaje</button>
+          </div>
+        </div>
     </div>
   </div>
 </div>

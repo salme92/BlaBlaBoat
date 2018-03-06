@@ -9,8 +9,12 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FilterPipe } from '../filter.pipe';
-import { WhereismytripComponent } from './whereismytrip/whereismytrip.component';
 import * as jquery from 'jquery';
+import { WhereismytripComponent } from './whereismytrip/whereismytrip.component';
+import { AgmCoreModule } from '@agm/core';
+
+import { ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -18,7 +22,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: MyHomeComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'whereismytrip', component: WhereismytripComponent}
+  { path: 'whereismytrip', component: WhereismytripComponent},
 ];
 
 @NgModule({
@@ -34,10 +38,11 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
+    CommonModule,
     RouterModule.forRoot(routes),
-
-
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCGXCwt_ms1pKq5v1llN5jDZ1lE37K2-A0'
+    })
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]

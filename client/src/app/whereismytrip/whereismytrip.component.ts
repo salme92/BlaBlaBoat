@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhereismytripComponent implements OnInit {
 
+  origin = this.origin;
+  destination = this.destination;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
+  
 }

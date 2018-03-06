@@ -19,6 +19,15 @@ export class MyHomeComponent implements OnInit {
     this.cities = cities;
   }
 
+  recogerInput() {
+    var origin = $('#pac-input').val();
+    var destination = $('#pac-input2').val();
+    console.log
+    console.log(origin)
+    console.log(destination)
+
+  }
+
   
 
 }

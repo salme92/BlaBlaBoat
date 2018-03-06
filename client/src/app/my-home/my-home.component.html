@@ -7,10 +7,11 @@
             <p>Más de 20.000 embarcaciones para alquilar al mejor precio y en todo el mundo</p>
         </div>
         <div class="inputs-search" style="color: black;">
-            <input id="pac-input" class="controls" type="text" placeholder="Ciudad de origen">
+            <input id="pac-input" class="controls" type="text" placeholder="Ciudad de origen" name="origin" ng-model="origin">
+            <input id="pac-input2" class="controls" type="text" placeholder="Ciudad de origen" name="destination" ng-model="destination">
             <input type="date">
             <input type="date">
-            <button type="submit" class="clearfix btn high">Buscar</button>
+            <button type="submit" (click)="recogerInput()" class="clearfix btn high">Buscar</button>
         </div>
       </div>
     </div>
@@ -34,36 +35,47 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="txt-experience">
-            <p>Francisco jose</p>
-            <p>dic. 2017 Alquiler de barcos CRANCHI Cranchi turchesse 24 en Costa Adeje</p>
+            <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAAsaAAAAJDRlODFhYjAyLTg4MjctNDU3NS1hZjBhLWFlZDliMGNlYmY2Yw.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel avello</span>
+            <br/><br/>
+            <p>5 de marzo del 2017 - 19:02:50</p>
+            <br/>
             <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
           </div>
         </div>
         <div class="col-sm-6">
             <div class="txt-experience">
-              <p>Francisco jose</p>
-              <p>dic. 2017 Alquiler de barcos CRANCHI Cranchi turchesse 24 en Costa Adeje</p>
+              <img src="https://avatars0.githubusercontent.com/u/568638?v=4&s=460" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Marc Pomar</span>
+              <br/><br/>
+              <p>5 de marzo del 2017 - 19:02:50</p>
+              <br/>
               <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
             </div>
           </div>
       </div>
     </div>
     <div class="col-sm-12">
+      <p>&nbsp;</p>
+    </div>
+    <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-6">
-            <div class="txt-experience">
-              <p>Francisco jose</p>
-              <p>dic. 2017 Alquiler de barcos CRANCHI Cranchi turchesse 24 en Costa Adeje</p>
-              <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-              <div class="txt-experience">
-                <p>Francisco jose</p>
-                <p>dic. 2017 Alquiler de barcos CRANCHI Cranchi turchesse 24 en Costa Adeje</p>
-                <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+            <div class="col-sm-6">
+                <div class="txt-experience">
+                  <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAAsaAAAAJDRlODFhYjAyLTg4MjctNDU3NS1hZjBhLWFlZDliMGNlYmY2Yw.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel avello</span>
+                  <br/><br/>
+                  <p>5 de marzo del 2017 - 19:02:50</p>
+                  <br/>
+                  <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+                </div>
               </div>
-            </div>
+              <div class="col-sm-6">
+                  <div class="txt-experience">
+                    <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAAsaAAAAJDRlODFhYjAyLTg4MjctNDU3NS1hZjBhLWFlZDliMGNlYmY2Yw.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel avello</span>
+                    <br/><br/>
+                    <p>5 de marzo del 2017 - 19:02:50</p>
+                    <br/>
+                    <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+                  </div>
+                </div>
         </div>
       </div>
   </div>
@@ -73,4 +85,5 @@
 <section class="favorite-place">
     <h1 style="color: white; text-align: center; padding-top: 70px; font-size: 3.4em;">Ibiza</h1>
     <h4 style="color: white; text-align: center; padding-bottom: 70px;">Nuestro destino favorito en España</h4>
+    <h3 style="color: white; text-align: center; padding-bottom: 60px; -webkit-border-radius: 80px; -moz-border-radius: 80px; border-radius: 80px;">Descúbrelo</h3>
   </section>

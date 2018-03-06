@@ -2,7 +2,7 @@
 import { Routes } from "@angular/router";
 import { MyHomeComponent } from "./app/my-home/my-home.component";
 import { RegistrationComponent } from "./app/registration/registration.component";
-import { WhereismytripComponent } from "./app/whereismytrip/whereismytrip.component";
+import { WhereismytripComponent} from "../src/app/whereismytrip/whereismytrip.component"
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

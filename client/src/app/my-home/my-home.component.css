@@ -1,17 +1,23 @@
 #prueba {
   background-color: rgba(0,0,0,0.8);
-  background-image: url(https://blog.zizoo.com/wp-content/uploads/2017/02/9713388777_b69e790ba9_k.jpg);
+  background-image: url(https://ec4071ced0f087a8dd73-2a0aec697fc362de045ce5e0c53ec223.ssl.cf3.rackcdn.com/56d704988c1d8.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 500px;
   width: 100%;
+  margin-top: -20px
    }
 
 .container-search {
-    color: white;
+    background-color: white;
+    color: black;
     width: 100%;
-    height: auto;
-    max-width: 680px;
+    height: 200px;
+    max-width: 860px;
     margin: 0 auto;
-    margin-top: 20%;
+    margin-top: 10%;
+    padding: 30px 50px;
+    border: 3px solid #dd4d93;
 }
 
 .txt-search {
@@ -20,11 +26,12 @@
 
 .favorite-place {
     background-color: rgba(0,0,0,0.8);
-    background-image: url(https://www.ecestaticos.com/imagestatic/clipping/a4d/52f/a4d52fec1b24132242803914de4ed3ad/ibiza-se-blinda-contra-airbnb-no-puede-haber-gente-durmiendo-en-furgonetas.jpg?mtime=1517599336);
+    background-image: url(http://www.essentialibiza.com/ecms/wp-content/uploads/2018/02/Timeless-Boats-Ibiza-007.jpg);
     background-size: cover;
     width: 100%;
     height: auto;
     background-position: center;
+    text-shadow: 0px -1px 0px #666, 2px 2px 0px #000, 3px 0px 0px #666, 2px -2px 0px #666;
 }
 
 /* The Modal (background) */
@@ -71,3 +78,18 @@ border: none;
 background: none;
 }
 
+.imgProfile {
+        /* cambia estos dos valores para definir el tamaño de tu círculo */
+        height: 100px;
+        width: 100px;
+        /* los siguientes valores son independientes del tamaño del círculo */
+        background-repeat: no-repeat;
+        background-position: 50%;
+        border-radius: 50%;
+        background-size: 100% auto;
+}
+
+.btnFavorite{
+    background: transparent;
+    border: none !important;
+}

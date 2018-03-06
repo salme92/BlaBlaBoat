@@ -34,4 +34,12 @@ export class LoginFormComponent implements OnInit {
     .subscribe();
   }
 
+  loginAnimate(){
+    let elementForm = document.getElementById("loginForm");
+    elementForm.classList.toggle("loginFormActive");
+
+    let elementBody = document.getElementById("body");
+    elementBody.classList.toggle("opacityBody");
+   }
+
 }
