@@ -6,3 +6,4 @@ function initAutocomplete() {
   var input2 = document.getElementById('pac-input2');
   var searchBox = new google.maps.places.SearchBox(input2);
 }
+

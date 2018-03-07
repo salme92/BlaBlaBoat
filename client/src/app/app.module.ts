@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
@@ -10,20 +11,12 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FilterPipe } from '../filter.pipe';
 import * as jquery from 'jquery';
-import { WhereismytripComponent } from './whereismytrip/whereismytrip.component';
 import { AgmCoreModule } from '@agm/core';
-
 import { ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
-
-const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home',  component: MyHomeComponent },
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'whereismytrip', component: WhereismytripComponent},
-];
+import { WhereismytripComponent } from './whereismytrip/whereismytrip.component';
+import { routes } from '../routes';
+import { MakeTripService } from '../services/make-trip.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +37,7 @@ const routes: Routes = [
       apiKey: 'AIzaSyCGXCwt_ms1pKq5v1llN5jDZ1lE37K2-A0'
     })
   ],
-  providers: [SessionService],
+  providers: [SessionService,MakeTripService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

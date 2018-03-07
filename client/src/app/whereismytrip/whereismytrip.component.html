@@ -1,7 +1,13 @@
-<h1>{{ title }}</h1>
+<div>
+    <h1>Indica direccion del evento</h1>
+      <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search ([formControl])="searchControl">
+    <div class="form-group">
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+  </div>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<div>
+    <input type="text" [(ngModel)]="lat" value="{{latitude}}" class="form-control margin-bottom-20" id='location1' name="lat" placeholder="Enter your latitud">
+    <input type="text" [(ngModel)]="lng" value="{{longitude}}" class="form-control" id="location2" name="lng" placeholder="Enter longitud">
+</div>

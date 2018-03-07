@@ -23,7 +23,7 @@
                   <br/>
                   <label>Ciudad de origen</label>
                   <br/>
-                  <input type="text" maxlength="50">
+                  <input type="text" maxlength="50" [(ngModel)]="origin" name='origin'>
                 </div>
               </div>
               <div class="col-sm-6">
@@ -31,44 +31,18 @@
                   <br/>
                   <label>Ciudad de destino</label>
                   <br/>
-                  <input type="text" maxlength="50">
+                  <input type="text" maxlength="50" [(ngModel)]="destination" name='destination'>
                 </div>
               </div>
             </div>
             <div class="line-entry">
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Teléfono</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Correo electrónico</label>
-                  <br/>
-                  <input type="text" maxlength="50">
-                </div>
-              </div>
-            </div>
-            <div class="line-entry">
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Contraseña</label>
-                  <br/>
-                  <input type="password" maxlength="50">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="col-sm-1">
-                  <br/>
-                  <label>Fecha</label>
-                  <br/>
-                  <input type="date">
-                </div>
+              <div class="col-sm-12">
+                  <div class="col-sm-1">
+                      <br/>
+                      <label>Fecha</label>
+                      <br/>
+                      <input type="date" [(ngModel)]="dateReservation" name='dateReservation'>
+                    </div>
               </div>
             </div>
           </div>
@@ -78,7 +52,7 @@
       <div>
         <p>&nbsp;</p>
       </div>
-      <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <!-- <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <div class="file-upload">
         <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
         <div class="image-upload-wrap">
@@ -95,11 +69,11 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="line-entry">
           <div class="col-sm-12">
             <br/>
-              <button>Crear viaje</button>
+              <button (click)="createTrip()">Crear viaje</button>
           </div>
         </div>
     </div>

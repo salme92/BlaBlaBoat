@@ -8,9 +8,11 @@ const Reservation = require('../models/Reservation')
 //CRUD => CREATE
 
 router.post("/newBoats", (req, res, next) => {
-    const { name, prize } = req.body;
+    console.log('entro en el back')
+    console.log(req.body)
+    const { origin, dest, date } = req.body;
 
-    const reserva = new Reservation({ name, prize });
+    const reserva = new Reservation({ origin, destination: dest, date });
     reserva.save()
         .then((savedReservation) => res.status(200).json(savedReservation))
         .catch((e) => res.status(500).json(e))
@@ -19,12 +21,22 @@ router.post("/newBoats", (req, res, next) => {
 
 //CRUD => READ
 
-router.get("/showReservation", (req,res,next) => {
-    Reservation.find()
-                .then((boatsFound) => res.status(200).json(boatsFound))
-                .catch((e) => res.status(500).json(e))
+// router.get("/showReservation", (req,res,next) => {
+//     Reservation.find()
+//                 .then((boatsFound) => res.status(200).json(boatsFound))
+//                 .catch((e) => res.status(500).json(e))
 
-})
+// })
+
+router.get("/trip/myTrips", function (req, res) {
+    const UserId = req.user._id;
+    console.log(UserId)
+      Reservation.find({author:UserId}, function(err, p) {
+          User.populate(p, { path: "author" } ,function(err, p){
+          res.status(200).json(p);
+          }); 
+      });
+  });
 
 //CRUD => UPDATE
 
