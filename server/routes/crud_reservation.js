@@ -21,22 +21,30 @@ router.post("/newBoats", (req, res, next) => {
 
 //CRUD => READ
 
-// router.get("/showReservation", (req,res,next) => {
-//     Reservation.find()
-//                 .then((boatsFound) => res.status(200).json(boatsFound))
-//                 .catch((e) => res.status(500).json(e))
+router.get("/showReservation", (req,res,next) => {
+    Reservation.find()
+                .then((boatsFound) => res.status(200).json(boatsFound))
+                .catch((e) => res.status(500).json(e))
 
-// })
+})
 
-router.get("/trip/myTrips", function (req, res) {
-    const UserId = req.user._id;
-    console.log(UserId)
-      Reservation.find({author:UserId}, function(err, p) {
-          User.populate(p, { path: "author" } ,function(err, p){
-          res.status(200).json(p);
-          }); 
-      });
-  });
+router.get("/showReservation/:id", (req,res,next) => {
+    console.log('entro aca')
+    Reservation.findById(req.params.id)
+                .then((boatsFound) => res.status(200).json(boatsFound))
+                .catch((e) => res.status(500).json(e))
+
+})
+
+// router.get("/myTrips", function (req, res) {
+//     const UserId = req.user._id;
+//     console.log(UserId)
+//       Reservation.find({author:UserId}, function(err, p) {
+//           User.populate(p, { path: "author" } ,function(err, p){
+//           res.status(200).json(p);
+//           }); 
+//       });
+//   });
 
 //CRUD => UPDATE
 

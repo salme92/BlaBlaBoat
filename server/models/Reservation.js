@@ -4,12 +4,13 @@ const User = require("../models/User");
 
 const reservationSchema = new Schema({
   author: {
-    type:String,
-    ref:"User"
+    user_Id: { type: Schema.Types.ObjectId, ref: "User", require: true}
   },
   origin: String,
   destination: String,
   date: String,
+  latitud: Number,
+  longitude: Number,
 
 }, {
   timestamps: {

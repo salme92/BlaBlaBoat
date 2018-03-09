@@ -33,17 +33,17 @@
         <p>&nbsp;</p>
       </div>
     <div class="row">
-      <div class="col-sm-12">
-          <h1> Login or Signup </h1>
+      <div class="col-sm-12" style="margin: 0 auto; margin-left: 140px; margin-top: 200px;">
+          <h1 style="margin-bottom: 20px;"> Login or Signup </h1>
           <div *ngIf="!session.getUser()">
             <form>
               <label> Username </label>
-              <input type="text" [(ngModel)]="username" name="username"/>
+              <input type="text" [(ngModel)]="username" name="username" style="width: 190px;"/>
               <br>
               <label> Password </label>
-              <input type="password" [(ngModel)]="password" name="password"/>
+              <input type="password" [(ngModel)]="password" name="password" style="width: 190px; margin-left: 5px; margin-top:20px; margin-bottom: 20px;"/>
               <div>
-                <button (click)="login()"> login </button>
+                <button (click)="login()" style="margin-right: 10px;"> login </button>
                 <button (click)="signup()"> signup </button>
               </div>
             </form>
@@ -51,7 +51,7 @@
           </div>
           
           <div *ngIf="session.getUser()">
-            <pre> {{ session.getUser() | json }} </pre>
+            <p>¡Gracias por logearte</p>
             <button (click)="logout()"> Logout </button>
           </div>
       </div>

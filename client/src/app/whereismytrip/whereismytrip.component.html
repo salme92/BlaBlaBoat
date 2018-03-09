@@ -1,13 +1,57 @@
-<div>
-    <h1>Indica direccion del evento</h1>
-      <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search ([formControl])="searchControl">
-    <div class="form-group">
-    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-    </agm-map>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="map-origin" style="width: 100%; height: auto; max-width: 620px; margin: 0 auto;">
+          <h2>Mapa de destino</h2>
+            <agm-map 
+            [latitude]="lat"
+            [longitude]="lng"
+            [zoom]="zoom"
+            [disableDefaultUI]="false"
+            [zoomControl]="false">
+          
+            <agm-marker 
+                *ngFor="let m of markers; let i = index"
+                (markerClick)="clickedMarker(m.label, i)"
+                [latitude]="m.lat"
+                [longitude]="m.lng"
+                [label]="m.label"
+                [markerDraggable]="m.draggable"
+                (dragEnd)="markerDragEnd(m, $event)">
+                
+              <agm-info-window>
+                <strong>InfoWindow content</strong>
+              </agm-info-window>
+              
+            </agm-marker>
+            
+            <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+                [radius]="5000"
+                [fillColor]="'red'"
+                [circleDraggable]="true"
+                [editable]="true">
+            </agm-circle>
+          
+          </agm-map>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>Datos del viaje</h2>
+        <ul *ngFor="let trip of trips">
+          <li>Lugar de origen: &nbsp; {{trip.origin}}</li>
+          <li>Lugar de destino: &nbsp; {{trip.destination}}</li>
+          <li>Fecha de reserva: &nbsp; {{trip.date}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
+</div> 
 
-<div>
-    <input type="text" [(ngModel)]="lat" value="{{latitude}}" class="form-control margin-bottom-20" id='location1' name="lat" placeholder="Enter your latitud">
-    <input type="text" [(ngModel)]="lng" value="{{longitude}}" class="form-control" id="location2" name="lng" placeholder="Enter longitud">
-</div>
+
+
+
+
+
+
+

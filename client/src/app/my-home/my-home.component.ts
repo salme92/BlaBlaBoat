@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import cities from "../../cities"
+import { MakeTripService } from '../../services/make-trip.service';
 
 @Component({
   selector: 'app-my-home',
@@ -8,15 +9,18 @@ import cities from "../../cities"
 })
 export class MyHomeComponent implements OnInit {
 
+  id: any
+  trips:Array<any>;
+  users: any;
   cities = cities;
   status:boolean = false;
   newCitie: Object = {}
 
 
-  constructor() { }
+  constructor(private pS: MakeTripService) { }
 
   ngOnInit() {
-    this.cities = cities;
+    this.pS.getMyTrips().subscribe(trips => this.trips = trips);
   }
 
   recogerInput() {
@@ -28,6 +32,5 @@ export class MyHomeComponent implements OnInit {
 
   }
 
-  
 
 }

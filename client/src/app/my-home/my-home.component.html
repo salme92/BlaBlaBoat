@@ -3,22 +3,13 @@
     <div class="col-sm-12">
       <div class="container-search">
         <div class="txt-search">
-            <p>Alquiler de barcos, ¡fácil y seguro!</p>
-            <p>Más de 20.000 embarcaciones para alquilar al mejor precio y en todo el mundo</p>
-        </div>
-        <div class="inputs-search" style="color: black;">
-            <input id="pac-input" class="controls" type="text" placeholder="Ciudad de origen" name="origin" ng-model="origin">
-            <input id="pac-input2" class="controls" type="text" placeholder="Ciudad de origen" name="destination" ng-model="destination">
-            <input type="date">
-            <input type="date">
-            <button type="submit" (click)="recogerInput()" class="clearfix btn high">Buscar</button>
+            <p>Bienvenidos a Bla Bla Boat</p>
+            <p>¡Más de 20.000 embarcaciones para alquilar al mejor precio con marineros como tú!, ¡¡¡Arrr MARINERO!!!</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -39,7 +30,7 @@
             <br/><br/>
             <p>5 de marzo del 2017 - 19:02:50</p>
             <br/>
-            <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+            <p>Increíble barco en el que me lo pasé genial contando mis historias y estando super borracho. Tío...¡TÍO!, ¡QUE PUTA PASADA!</p>
           </div>
         </div>
         <div class="col-sm-6">
@@ -48,7 +39,7 @@
               <br/><br/>
               <p>5 de marzo del 2017 - 19:02:50</p>
               <br/>
-              <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+              <p>Me encantó la learning unit que leí. <br/>¿El qué era dices?. Eso lo vemos en el módulo 3... pero fíjate en un detallito...</p>
             </div>
           </div>
       </div>
@@ -60,26 +51,28 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="txt-experience">
-                  <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAAsaAAAAJDRlODFhYjAyLTg4MjctNDU3NS1hZjBhLWFlZDliMGNlYmY2Yw.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel avello</span>
+                  <img src="https://i.gyazo.com/d9aacbd3432e94b5616e3ced9f19ac8c.png" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Yaiza García</span>
                   <br/><br/>
                   <p>5 de marzo del 2017 - 19:02:50</p>
                   <br/>
-                  <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+                  <p>Al capitán del barco le tuve que hacer la acupultura porque se mareó 5 veces intentando buscar a Bob Esponja, ¡UNA LOCURA!</p>
                 </div>
               </div>
               <div class="col-sm-6">
                   <div class="txt-experience">
-                    <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAAsaAAAAJDRlODFhYjAyLTg4MjctNDU3NS1hZjBhLWFlZDliMGNlYmY2Yw.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel avello</span>
+                    <img src="https://i.gyazo.com/0f77409c4ad3f6d3116e4163e90f117f.jpg" alt="" title="" width="50" height="auto" class="imgProfile"/><span>&nbsp;&nbsp;&nbsp;&nbsp; Manuel del Pino</span>
                     <br/><br/>
                     <p>5 de marzo del 2017 - 19:02:50</p>
                     <br/>
-                    <p>EXCelente capitan...muy buen manejo del barco, precabido y respetuoso con las normas ....le recomiendo a cualquier armador que quiera alquilarle el barco.... Espero verle pronto otra vez a él y a su familia...muy simpáticos todos...chapo!...</p>
+                    <p>Pisha que arte tiene er marinero jajajaja to flama xd</p>
                   </div>
-                </div>
+            </div>
         </div>
       </div>
   </div>
 </div>
+
+
 
 
 <section class="favorite-place">
@@ -87,3 +80,19 @@
     <h4 style="color: white; text-align: center; padding-bottom: 70px;">Nuestro destino favorito en España</h4>
     <h3 style="color: white; text-align: center; padding-bottom: 60px; -webkit-border-radius: 80px; -moz-border-radius: 80px; border-radius: 80px;">Descúbrelo</h3>
   </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="tripActives">Viajes activos</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let trip of trips" style="text-align: center">
+        <p style="font-size: 1.1em;">Ciudad de Origen: {{trip.origin}}</p>
+        <p style="font-size: 1.1em;">Ciudad de Destino: {{trip.destination}}</p>
+        <p style="font-size: 1.1em;">Fecha de reserva: {{trip.date}} </p>
+        <a [routerLink]="['/showReservation/', trip._id]" style="padding-bottom: 100px; padding: 10px 10px 10px; background-color: #337ab7; color: white;">Acceder al viaje</a>
+      </div>
+    </div>
+  </div>

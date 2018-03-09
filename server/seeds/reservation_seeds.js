@@ -12,19 +12,25 @@ mongoose.connect('mongodb://localhost/Project-M3_Boats')
 let salt = bcrypt.genSaltSync(bcryptSalt);
 
 const date = [{
-        Name: 'Viaje Valencia a Ibiza',
+        origin: 'Valencia',
+        destination: 'Ibiza',
         Date: Date.now(),
-        Prize: 150
+        longitude: 38.910575,
+        latitud: 1.437703
     },
     {  
-        Name: 'Viaje a Pachá Las Palmas',
+        origin: 'Estepona',
+        destination: 'Gibraltar',
         Date: new Date(2018,09,23),
-        Prize: 99.95
+        longitude: 36.132691,
+        latitud: -5.349352
     },
     {  
-        Name: 'Viaje desde el Manzanares hasta Nueva York',
+        origin: 'A Coruña',
+        destination: 'Albufeira',
         Date: new Date(201,12,31),
-        Prize: 50
+        longitude: 37.087352,
+        latitud: -8.244767
     },
 ];
 

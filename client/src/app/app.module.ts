@@ -17,6 +17,10 @@ import { CommonModule } from '@angular/common';
 import { WhereismytripComponent } from './whereismytrip/whereismytrip.component';
 import { routes } from '../routes';
 import { MakeTripService } from '../services/make-trip.service';
+import { MyTripsComponent } from './my-trips/my-trips.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from '../services/user.service';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,9 @@ import { MakeTripService } from '../services/make-trip.service';
     MyHomeComponent,
     RegistrationComponent,
     FilterPipe,
-    WhereismytripComponent
+    WhereismytripComponent,
+    MyTripsComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +41,10 @@ import { MakeTripService } from '../services/make-trip.service';
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCGXCwt_ms1pKq5v1llN5jDZ1lE37K2-A0'
-    })
+    }),
   ],
-  providers: [SessionService,MakeTripService],
+  providers: [SessionService,MakeTripService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
